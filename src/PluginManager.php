@@ -6,8 +6,8 @@ abstract class PluginManager
 	/**
 	 * @var array<string,Plugin> $loaded_plugins
 	 */
-	public static $loaded_plugins = [];
-	public static $plugin_folders = [
+	static $loaded_plugins = [];
+	static $plugin_folders = [
 		"plugins"
 	];
 

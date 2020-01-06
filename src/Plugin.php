@@ -18,7 +18,7 @@ class Plugin
 	 * @var array<array{function:Closure,priority:int}> $event_handlers
 	 */
 	public $event_handlers = [];
-	private $unregistered = false;
+	protected $unregistered = false;
 
 	/**
 	 * Don't call this unless you know what you're doing.
