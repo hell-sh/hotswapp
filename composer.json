@@ -2,6 +2,7 @@
 	"name": "hell-sh/hotswapp",
 	"description": "Easily integrate hot-swappable plugins into your PHP project.",
 	"type": "library",
+	"license": "MIT",
 	"autoload": {
 		"psr-4": {
 			"hotswapp\\": "src/"
