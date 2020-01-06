@@ -44,7 +44,7 @@ abstract class PluginManager
 				}
 				try
 				{
-					self::$loaded_plugins[$name] = new Plugin($folder, $name);
+					self::$loaded_plugins[$name] = static::constructPlugin($folder, $name);
 				}
 				catch(Exception $e)
 				{
@@ -52,6 +52,16 @@ abstract class PluginManager
 				}
 			}
 		}
+	}
+
+	/**
+	 * @param string $folder
+	 * @param string $name
+	 * @return Plugin
+	 */
+	protected static function constructPlugin(string $folder, string $name)
+	{
+		return new Plugin($folder, $name);
 	}
 
 	/**
