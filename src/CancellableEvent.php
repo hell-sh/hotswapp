@@ -11,6 +11,6 @@ trait CancellableEvent
 
 	function cancel()
 	{
-		$this->cancelled = false;
+		$this->cancelled = true;
 	}
 }
