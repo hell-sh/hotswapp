@@ -61,7 +61,7 @@ class Plugin
 		{
 			($this->event_handlers[$type]["function"])($event);
 		}
-		return array_search(CancellableEvent::class, class_uses($event), true) !== false ? $event->cancelled : false;
+		return in_array(CancellableEvent::class, class_uses($event)) ? $event->cancelled : false;
 	}
 
 	/**

@@ -104,6 +104,6 @@ abstract class PluginManager
 		{
 			echo "Unhandled exception in plugin: ".get_class($e).": ".$e->getMessage()."\n".$e->getTraceAsString()."\n";
 		}
-		return array_search(CancellableEvent::class, class_uses($event), true) !== false ? $event->cancelled : false;
+		return in_array(CancellableEvent::class, class_uses($event)) ? $event->cancelled : false;
 	}
 }
