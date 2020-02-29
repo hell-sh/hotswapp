@@ -39,7 +39,7 @@ abstract class PluginManager
 				}
 				if(array_key_exists($name, self::$loaded_plugins))
 				{
-					echo "A plugin called $name is already loaded, not loading $name from $folder\n";
+					echo "A plugin called $name is already loaded, not loading $name from ".$folder.DIRECTORY_SEPARATOR.$file."\n";
 					continue;
 				}
 				try
