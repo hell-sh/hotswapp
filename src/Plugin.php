@@ -38,6 +38,11 @@ class Plugin
 		{
 			require "$folder/$name/$name.php";
 		}
+		else if(is_file("$folder/$name.phar"))
+		{
+			\Phar::loadPhar("$folder/$name.phar", "$name.phar");
+			require "phar://$name.phar/$name.php";
+		}
 		else
 		{
 			throw new RuntimeException("Couldn't find out how to load plugin \"$name\"");

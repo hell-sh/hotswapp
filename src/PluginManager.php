@@ -27,11 +27,16 @@ abstract class PluginManager
 				continue;
 			}
 			array_push($loaded_folders, $folder);
-			foreach(scandir($folder) as $name)
+			foreach(scandir($folder) as $file)
 			{
+				$name = $file;
 				if(substr($name, -4) == ".php" && is_file("$folder/$name"))
 				{
 					$name = substr($name, 0, -4);
+				}
+				else if(substr($name, -5) == ".phar" && is_file("$folder/$name"))
+				{
+					$name = substr($name, 0, -5);
 				}
 				else if(!is_dir("$folder/$name") || !is_file("$folder/$name/$name.php"))
 				{
